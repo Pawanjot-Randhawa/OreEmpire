@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukq26la3o08x"]
+
+[ext_resource type="PackedScene" uid="uid://rd081wjn2qg0" path="res://assets/extraWareHouseItems/upgradeItems/arcademachine.glb" id="1_1qcgl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5aswj"]
+size = Vector3(2.3735962, 3.8399048, 2.0044556)
+
+[node name="arcadeMachine" type="StaticBody3D"]
+
+[node name="arcademachine" parent="." instance=ExtResource("1_1qcgl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19515991, 0.9229431, -0.00015258789)
+shape = SubResource("BoxShape3D_5aswj")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://0iouu71llp53"]
+
+[ext_resource type="PackedScene" uid="uid://vu1qj048jfbt" path="res://assets/GLB format/floor.glb" id="1_hc3cb"]
+[ext_resource type="Texture2D" uid="uid://7n2my6l1xaaj" path="res://temp/Set_03_DiffuseMap.png" id="2_y4jak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3m4c"]
+albedo_texture = ExtResource("2_y4jak")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkprd"]
+size = Vector3(2, 0.096185304, 2)
+
+[node name="Floor" type="StaticBody3D"]
+
+[node name="floor2" parent="." instance=ExtResource("1_hc3cb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="floor" parent="floor2" index="0"]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o3m4c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.09326783, 0)
+shape = SubResource("BoxShape3D_wkprd")
+
+[editable path="floor2"]

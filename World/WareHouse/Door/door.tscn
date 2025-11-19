@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cowwybhierh2h"]
+
+[ext_resource type="Script" uid="uid://n15lqk7p744v" path="res://World/WareHouse/Door/door.gd" id="1_5iw3r"]
+[ext_resource type="PackedScene" uid="uid://ditqk8wdtet7k" path="res://assets/GLB format/wall-doorway-square.glb" id="2_5iw3r"]
+[ext_resource type="PackedScene" uid="uid://cjdmpr7ca1y0t" path="res://assets/GLB format/door-rotate-square-c.glb" id="3_3uc51"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8svq"]
+size = Vector3(6, 2.394104, 5)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_5iw3r")
+
+[node name="wall-doorway-square2" parent="." instance=ExtResource("2_5iw3r")]
+
+[node name="door-rotate-square-c2" parent="." instance=ExtResource("3_3uc51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004310012)
+
+[node name="door" parent="door-rotate-square-c2/door-rotate-square-c" index="0"]
+transform = Transform3D(1, 0, -3.8754095e-16, 0, 1, 0, 3.8754095e-16, 0, 1, 0, 0, -0.44809657)
+
+[node name="handle" parent="door-rotate-square-c2/door-rotate-square-c/door" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.1626229e-16, 0, -1.1626229e-16, 1, 0, 0.9, 0.75)
+
+[node name="InteractionRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionRange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0040283203, 1.198883, 0.00390625)
+shape = SubResource("BoxShape3D_v8svq")
+
+[connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
+[connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
+
+[editable path="wall-doorway-square2"]
+[editable path="door-rotate-square-c2"]

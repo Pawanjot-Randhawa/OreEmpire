@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WorkerStats" load_steps=2 format=3 uid="uid://coq85v41f2s4t"]
+
+[ext_resource type="Script" uid="uid://dv6xsd8m7o3di" path="res://NPC/Worker/WorkerResources/WorkerStats.gd" id="1_l8a7u"]
+
+[resource]
+script = ExtResource("1_l8a7u")
+head = 4
+body = 7
+legs = 10
+feet = 6
+mine_timer = 2.0
+metadata/_custom_type_script = "uid://dv6xsd8m7o3di"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqnqa0p3vct6"]
+
+[ext_resource type="PackedScene" uid="uid://dv3e8pd47ox6q" path="res://assets/GLB format/roof-flat-center.glb" id="1_3jddo"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_npb1d"]
+data = PackedVector3Array(1, 0.099999994, 1, 1, 0, 1, -1, 0, 1, -1, 0, 1, -1, 0.099999994, 1, 1, 0.099999994, 1, 1, 0.099999994, 1, 1, 0.099999994, -1, 1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0.099999994, 1, -1, 0, 1, 1, 0, 1, 1, 0, -1, 1, 0, -1, -1, 0, -1, -1, 0, 1, -1, 0.099999994, -1, -1, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0.099999994, -1, -1, 0.099999994, -1, -1, 0, 1, -1, 0, -1, -1, 0.099999994, -1, -1, 0.099999994, -1, -1, 0.099999994, 1, -1, 0, 1, -1, 0.099999994, -1, 1, 0.099999994, -1, 1, 0.099999994, 1, 1, 0.099999994, 1, -1, 0.099999994, 1, -1, 0.099999994, -1)
+
+[node name="roofFlat" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+
+[node name="roof-flat-center2" parent="." instance=ExtResource("1_3jddo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_npb1d")
+
+[editable path="roof-flat-center2"]

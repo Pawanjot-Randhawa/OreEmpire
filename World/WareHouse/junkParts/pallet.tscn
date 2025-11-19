@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx5f2fohp4s1k"]
+
+[ext_resource type="Texture2D" uid="uid://c66kw3qa1wu87" path="res://assets/extraWareHouseItems/junkItems/WoodenPallet.png" id="1_mmm3p"]
+[ext_resource type="ArrayMesh" uid="uid://ddc3cnxa47mk3" path="res://assets/extraWareHouseItems/junkItems/WoodenPallet.obj" id="2_ujvui"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ms27"]
+albedo_texture = ExtResource("1_mmm3p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvwgi"]
+size = Vector3(1.2512207, 0.1652832, 1.270752)
+
+[node name="pallet" type="StaticBody3D"]
+
+[node name="WoodenPallet" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_0ms27")
+mesh = ExtResource("2_ujvui")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00036621094, 0.076049805, 0.006958008)
+shape = SubResource("BoxShape3D_uvwgi")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdhbtocx7ee16"]
+
+[ext_resource type="Texture2D" uid="uid://baeincdwbrpcb" path="res://assets/extraWareHouseItems/junkItems/Crate01.png" id="1_jg8ei"]
+[ext_resource type="ArrayMesh" uid="uid://c4qq83nkd3tgg" path="res://assets/extraWareHouseItems/junkItems/Crate1.obj" id="2_ayub2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_637ah"]
+albedo_texture = ExtResource("1_jg8ei")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djdr6"]
+size = Vector3(0.86621094, 0.85461426, 0.8720703)
+
+[node name="crate" type="StaticBody3D"]
+
+[node name="Crate1" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_637ah")
+mesh = ExtResource("2_ayub2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39605713, 0)
+shape = SubResource("BoxShape3D_djdr6")

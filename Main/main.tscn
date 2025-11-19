@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnyyo6261jg3p"]
+
+[ext_resource type="Script" uid="uid://cgud08s1os8v7" path="res://Main/main.gd" id="1_eunhr"]
+[ext_resource type="PackedScene" uid="uid://qknipywawqyx" path="res://UI/ui_manager.tscn" id="3_eunhr"]
+[ext_resource type="PackedScene" uid="uid://babexucgc3o0" path="res://Player/player.tscn" id="3_qvhan"]
+[ext_resource type="PackedScene" uid="uid://dqm733myq6utd" path="res://World/WareHouse/the_ware_house.tscn" id="4_eunhr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eunhr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k3v36"]
+sky_material = SubResource("ProceduralSkyMaterial_eunhr")
+
+[sub_resource type="Environment" id="Environment_liyct"]
+background_mode = 2
+sky = SubResource("Sky_k3v36")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_eunhr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_liyct")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_qvhan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.862392, 7.439997, 31.899862)
+
+[node name="TheWareHouse" parent="." instance=ExtResource("4_eunhr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -39, 1.0000005, 20)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIManager" parent="CanvasLayer" instance=ExtResource("3_eunhr")]

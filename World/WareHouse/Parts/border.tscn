@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtqicynmuyh5m"]
+
+[ext_resource type="PackedScene" uid="uid://cyamksimjcdtp" path="res://assets/GLB format/border.glb" id="1_rlmjl"]
+
+[node name="Border" type="Node3D"]
+
+[node name="border2" parent="." instance=ExtResource("1_rlmjl")]
